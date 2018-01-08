@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vending Machine</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="mainHeading" class = "text-center">Vending Machine</h1>
+            <hr width="1296" >
+            <div id = "snacksTable" class= "col-md-9 text-center">
+              <!--
+              hold 3x3 snacksTable
+            -->
+            </div>
+
+            <div id = "errorMessages">
+            </div>
+
+            <div class= "col-md-3 text-center">
+
+              <h4>Total $ In</h4>
+
+              <div id = "increment" class="display">0.00
+              </div>
+
+              <div class="row">
+                <button id = "addDollar" type="button" class="col-md-6">
+                  <h5>Add Dollar</h5>
+                </button>
+
+                <button id = "addQuarter" type="button" class="col-md-6">
+                  <h5>Add Quarter</h5>
+                </button>
+                <hr>
+              </div>
+
+              <div class="row">
+                <button id = "addDime" type="button" class="col-md-6">
+                  <h5>Add Dime</h5>
+                </button>
+
+                <button id = "addNickel" type="button" class="col-md-6">
+                  <h5>Add Nickel</h5>
+                </button>
+              </div>
+
+              <hr>
+              <h4>Messages</h4>
+
+              <div id = "displayInfo" class="display">Welcome!
+              </div>
+
+              <div id = "itemChoice" class="display">Item:
+                <div id = "choiceNumber"></div>
+              </div>
+
+              <div class="row">
+                <button id = "makePurchase" type="button" class="col-md-12">
+                  <h5>Make Purchase</h5>
+                </button>
+              </div>
+
+              <hr>
+
+              <h4>Change</h4>
+
+              <button id = "changeReturn" type="button" class="col-md-12">
+                <h5>Change Return</h5>
+              </button>
+
+              <div id = "change" class="display">
+
+              </div>
+
+            </div>
+        </div>
+
+
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script src="js/vendingMachine.js"></script>
+    </body>
+</html>

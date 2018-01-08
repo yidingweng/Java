@@ -1,0 +1,9 @@
+8::Water::15::1.75
+1::Diet Coke::13::2.05
+9::Diet Sprite::18::2.25
+2::Sprite::19::2.15
+3::Coke::14::2.25
+4::Gatorade::14::2.05
+5::Pepsi::20::2.2
+6::Diet Pepsi::18::1.95
+7::Mountain Dew::23::2.1

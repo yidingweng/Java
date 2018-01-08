@@ -1,0 +1,21 @@
+2017-06-04T10:14:26.825 : Snack water purchased/removed
+2017-06-05T10:24:35.861 : Snack Pepsi purchased/removed
+2017-06-05T10:24:36.005 : authenticatePurchase: Pepsi4.0
+2017-06-05T10:27:18.613 : Snack water purchased/removed
+2017-06-05T10:27:18.718 : authenticatePurchase: water4.0
+2017-06-05T10:40:33.007 : Snack Pepsi purchased/removed
+2017-06-05T10:41:30.620 : Snack Pepsi purchased/removed
+2017-06-05T10:41:30.700 : authenticatePurchase: Pepsi4.0
+2017-06-05T10:43:47.679 : authenticatePurchase: Coke4.0
+2017-06-05T10:46:51.182 : authenticatePurchase: Coke4.0
+2017-06-05T11:28:27.086 : authenticatePurchaseNoItemInventoryException water1.0
+2017-06-05T11:28:27.173 : authenticatePurchase:InsufficientFundsException water1.02017-06-05T11:52:30.661 : authenticatePurchaseNoItemInventoryEEEEEEEEEException water1.0
+2017-06-05T11:52:30.783 : authenticatePurchase:InsufficientFundsEEEEEEEEEException water1.0
+2017-06-05T14:46:25.301 : sufficientFunds:InsufficientFundsException yiding.softwareguildweek4_vendingmachinespring.InventoryService$InsufficientFundsException1.02.0
+2017-06-05T15:09:21.573 : sufficientFunds:InsufficientFundsException yiding.softwareguildweek4_vendingmachinespring.InventoryService$InsufficientFundsException1.02.0
+2017-06-05T15:11:37.344 : isSoldOut:NoItemInventoryExceptio yiding.softwareguildweek4_vendingmachinespring.InventoryService$NoItemInventoryExceptionjuice
+2017-06-05T15:16:27.312 : sufficientFunds:yiding.softwareguildweek4_vendingmachinespring.InventoryService$InsufficientFundsException1.52.0
+2017-06-05T15:16:53.192 : isSoldOut: yiding.softwareguildweek4_vendingmachinespring.InventoryService$NoItemInventoryExceptionuu
+2017-06-05T15:27:09.586 : isSoldOut: yiding.softwareguildweek4_vendingmachinespring.InventoryService$NoItemInventoryExceptionjiji
+2017-06-05T15:47:07.617 : isSoldOut: yiding.softwareguildweek4_vendingmachinespring.InventoryService$NoItemInventoryExceptionjiji
+2017-06-05T15:50:31.828 : insufficientFunds:yiding.softwareguildweek4_vendingmachinespring.InventoryService$InsufficientFundsException1.01.7

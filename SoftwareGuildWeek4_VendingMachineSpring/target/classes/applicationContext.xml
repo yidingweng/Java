@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/mvc
+          http://www.springframework.org/schema/mvc/spring-mvc.xsd
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/aop  
+          http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+    
+    <!-- Bean definitions go here -->
+    
+    <bean id = "userIO" class = "yiding.softwareguildweek4_vendingmachinespring.UserIO"/>
+    <bean id = "view" class = "yiding.softwareguildweek4_vendingmachinespring.InventoryView">
+        <constructor-arg ref = "userIO"/>
+    </bean>
+    
+    <bean id = "InventoryDao" class = "yiding.softwareguildweek4_vendingmachinespring.InventoryDao"/>
+    
+    <bean id = "InventoryAuditDao" class = "yiding.softwareguildweek4_vendingmachinespring.InventoryAuditDao"/>
+    
+    <bean id = "InventoryService" class = "yiding.softwareguildweek4_vendingmachinespring.InventoryService">
+        <constructor-arg ref = "InventoryDao"/>
+        <constructor-arg ref = "InventoryAuditDao"/>   
+    </bean>
+
+    <bean id = "controller" class = "yiding.softwareguildweek4_vendingmachinespring.InventoryController">
+        <constructor-arg ref = "view"/>
+        <constructor-arg ref = "InventoryService"/>   
+    </bean>
+    
+    <bean id="loggingAdvice" class="yiding.softwareguildweek4_vendingmachinespring.LoggingAdvice">
+        <constructor-arg ref = "InventoryAuditDao"/>
+    </bean>
+    
+    <aop:config>
+        <aop:aspect ref="loggingAdvice">
+          
+          <!-- <aop:after-returning
+              method="createAuditEntry"
+              pointcut="execution(* yiding.softwareguildweek4_vendingmachinespring.InventoryService.authenticatePurchase(..))"
+          />-->
+        <!-- <aop:after-throwing
+
+            method="createAuditEntryIsSoldOut"
+            pointcut="execution(* yiding.softwareguildweek4_vendingmachinespring.InventoryDao.isSoldOut(..)) &amp;&amp; args(itemToPurchase)"
+            throwing= "exception"
+            arg-names= "itemToPurchase, exception"
+        />
+          
+        <aop:after-throwing
+            method = "createAuditEntrySufficientFunds"
+            pointcut = "execution(* yiding.softwareguildweek4_vendingmachinespring.InventoryDao.sufficientFunds(..)) &amp;&amp; args(money,snackPrice)"
+            throwing = "exception"
+            arg-names = "snack, exception"
+        />-->
+        
+        <aop:after-throwing
+
+            method="createAuditEntryIsSoldOut"
+            pointcut="execution(* yiding.softwareguildweek4_vendingmachinespring.InventoryDao.isSoldOut(..))"
+            throwing = "exception"
+        />
+        
+        <aop:after-throwing
+            method = "createAuditEntrySufficientFunds"
+            pointcut = "execution(* yiding.softwareguildweek4_vendingmachinespring.InventoryDao.insufficientFunds(..))"
+            throwing = "exception"
+        />
+        </aop:aspect>
+    </aop:config> 
+    
+</beans>
